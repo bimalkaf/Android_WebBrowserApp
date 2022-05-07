@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="8dp"
+        android:background="@drawable/rounded_corner"
+        android:id="@+id/input_fields">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_link_24"
+            android:id="@+id/link_icon"
+            android:layout_centerVertical="true"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/clear_icon"
+            android:layout_toEndOf="@id/link_icon"
+            android:background="@null"
+            android:hint="Search or Type URL"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/url_input"
+            android:inputType="textUri"
+            android:imeOptions="actionGo"
+            android:singleLine="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_baseline_cancel_24"
+            android:id="@+id/clear_icon"
+            android:layout_centerVertical="true"/>
+
+
+    </RelativeLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E1E1E1"
+        android:layout_below="@id/input_fields"
+        android:id="@+id/divider_1" />
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_below="@id/input_fields"
+        android:visibility="invisible" />
+
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/divider_1"
+        android:layout_above="@id/divider_2"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E1E1E1"
+        android:id="@+id/divider_2"
+        android:layout_above="@id/bottom_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_layout"
+        android:orientation="horizontal"
+        android:background="#F3F3F3"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:id="@+id/web_back" />
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_arrow_forward_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:id="@+id/web_forward" />
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_refresh_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:id="@+id/web_refresh" />
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_share_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:id="@+id/web_share" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
